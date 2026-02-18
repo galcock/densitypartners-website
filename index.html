@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Density Partners - AI-powered M&A advisory for lower middle-market transactions. Where substance meets execution.">
+    <title>Density Partners | M&A Advisory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #0F1626;
+            background: #F8FAFC;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            background: #0A1628;
+            color: #F8FAFC;
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #B87333;
+            margin-right: 1rem;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+        
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        .tagline {
+            font-size: 0.875rem;
+            color: #F8FAFC;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+        
+        nav a {
+            color: #F8FAFC;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #B87333;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #0A1628;
+            line-height: 1.2;
+        }
+        
+        .hero .psi {
+            color: #B87333;
+            font-size: 4rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #0A1628;
+            color: #F8FAFC;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #0A1628;
+        }
+        
+        .cta-button:hover {
+            background: #B87333;
+            border-color: #B87333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(184, 115, 51, 0.3);
+        }
+        
+        /* Services */
+        .services {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #0A1628;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            padding: 2rem;
+            background: #F8FAFC;
+            border-radius: 12px;
+            border: 2px solid #E2E8F0;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0A1628;
+        }
+        
+        .service-card p {
+            color: #475569;
+        }
+        
+        /* About */
+        .about {
+            padding: 4rem 0;
+        }
+        
+        .about h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #0A1628;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            color: #475569;
+            line-height: 1.8;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 4rem 0;
+            background: #0A1628;
+            color: #F8FAFC;
+        }
+        
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+            font-size: 1.25rem;
+        }
+        
+        .contact-info a {
+            color: #B87333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            background: #0A1628;
+            color: #F8FAFC;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">
+                    <span class="logo">ψ</span>
+                    <div class="brand-text">
+                        <div class="brand-name">DENSITY PARTNERS</div>
+                        <div class="tagline">Where substance meets execution</div>
+                    </div>
+                </div>
+                <nav>
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1><span class="psi">ψ</span> M&A Advisory<br>Built Different</h1>
+            <p>AI-powered investment banking for the lower middle market. Institutional execution with entrepreneurial efficiency.</p>
+            <a href="#contact" class="cta-button">Start a Conversation</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>What We Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Sell-Side Advisory</h3>
+                    <p>Comprehensive sell-side representation for business owners seeking optimal outcomes. From valuation to close, we maximize value and minimize friction.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Buy-Side Advisory</h3>
+                    <p>Strategic acquisition support for private equity firms and strategic buyers. Target identification, valuation, and deal execution.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Corporate Carve-Outs</h3>
+                    <p>Expert divestiture advisory for corporate parents seeking to divest non-core assets. Complex structures, simplified process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Our Approach</h2>
+            <div class="about-content">
+                <p>Density Partners brings a new model to M&A advisory — combining 20+ years of institutional experience with AI-powered analytical capabilities.</p>
+                
+                <p>We focus on the lower middle market ($5M–$150M enterprise value) where deep expertise and personalized attention create the most impact. Our sectors of focus: manufacturing, industrial services, healthcare services, value-added distribution, and media.</p>
+                
+                <p>Built on the principle that substance matters more than style, we deliver institutional-quality execution without the bureaucracy of traditional advisory firms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Talk</h2>
+            <div class="contact-info">
+                <p>Ready to explore your options?</p>
+                <p><a href="mailto:gary@densitypartners.com">gary@densitypartners.com</a></p>
+                <p style="margin-top: 2rem; opacity: 0.7;">Density Partners<br>Los Angeles, California</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Density Partners. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
