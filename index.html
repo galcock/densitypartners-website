@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Density Partners - AI-powered M&A advisory for lower middle-market transactions. Where substance meets execution.">
-    <title>Density Partners | M&A Advisory</title>
+    <title>Density Partners | Lower Middle-Market M&A Advisory</title>
+    <meta name="description" content="Density Partners delivers AI-powered M&A advisory services to lower middle-market companies with institutional-grade execution and client-first philosophy.">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -15,319 +18,876 @@
             box-sizing: border-box;
         }
         
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #0F1626;
-            background: #F8FAFC;
+        :root {
+            --navy: #1a2744;
+            --gold: #c9a227;
+            --light-gray: #f8f9fa;
+            --medium-gray: #6c757d;
+            --white: #ffffff;
         }
         
-        .container {
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--navy);
+            line-height: 1.7;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(26, 39, 68, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-        
-        /* Header */
-        header {
-            background: #0A1628;
-            color: #F8FAFC;
-            padding: 2rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #B87333;
-            margin-right: 1rem;
-        }
-        
-        .brand {
-            display: flex;
-            align-items: center;
-        }
-        
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .brand-name {
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        
-        .tagline {
-            font-size: 0.875rem;
-            color: #F8FAFC;
-            opacity: 0.8;
-            margin-top: 0.25rem;
-        }
-        
-        nav a {
-            color: #F8FAFC;
+            color: var(--white);
             text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 500;
-            transition: color 0.3s;
+            letter-spacing: 1px;
         }
         
-        nav a:hover {
-            color: #B87333;
+        .logo span {
+            color: var(--gold);
         }
         
-        /* Hero */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        /* Hero Section */
         .hero {
-            padding: 6rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1420 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: linear-gradient(45deg, transparent 30%, rgba(201, 162, 39, 0.03) 50%, transparent 70%);
+            transform: rotate(-15deg);
+            animation: shimmer 20s infinite ease-in-out;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(-15deg) translateX(0); }
+            50% { transform: rotate(-15deg) translateX(50px); }
+        }
+        
+        .geometric-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+        }
+        
+        .geometric-pattern::before,
+        .geometric-pattern::after {
+            content: '';
+            position: absolute;
+            border: 2px solid var(--gold);
+        }
+        
+        .geometric-pattern::before {
+            top: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .geometric-pattern::after {
+            bottom: 15%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            transform: rotate(45deg);
+            animation: float 12s infinite ease-in-out reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+        
+        .hero-content {
+            max-width: 900px;
             text-align: center;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #0A1628;
-            line-height: 1.2;
-        }
-        
-        .hero .psi {
-            color: #B87333;
             font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
         }
         
-        .hero p {
-            font-size: 1.25rem;
-            color: #475569;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.8;
         }
         
         .cta-button {
             display: inline-block;
-            background: #0A1628;
-            color: #F8FAFC;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            padding: 1rem 3rem;
+            background-color: var(--gold);
+            color: var(--navy);
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid #0A1628;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
         }
         
         .cta-button:hover {
-            background: #B87333;
-            border-color: #B87333;
+            background-color: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(184, 115, 51, 0.3);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
         }
         
-        /* Services */
-        .services {
-            padding: 4rem 0;
-            background: white;
+        /* Section Base Styles */
+        section {
+            padding: 8rem 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
         
-        .services h2 {
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #0A1628;
+            margin-bottom: 5rem;
         }
         
-        .services-grid {
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        .section-header p {
+            color: var(--medium-gray);
+            font-size: 1.15rem;
+            margin-top: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Firm Overview */
+        #overview {
+            background-color: var(--light-gray);
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .overview-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 2px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--gold);
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .overview-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+        
+        .overview-card p {
+            color: var(--medium-gray);
+            line-height: 1.8;
+        }
+        
+        /* AI Advisory Section */
+        #ai-advisory {
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1420 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #ai-advisory::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.05) 0%, transparent 70%);
+            animation: pulse 15s infinite ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.5); opacity: 0.8; }
+        }
+        
+        #ai-advisory .section-header h2 {
+            color: var(--white);
+        }
+        
+        #ai-advisory .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ai-feature {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .ai-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: rgba(201, 162, 39, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .ai-feature:hover .ai-icon {
+            background: var(--gold);
+            color: var(--navy);
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .ai-feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .ai-feature p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+        }
+        
+        /* Sectors Section */
+        #sectors {
+            background-color: var(--white);
+        }
+        
+        .sectors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
         
+        .sector-card {
+            background: var(--light-gray);
+            padding: 2.5rem;
+            border-radius: 2px;
+            border-left: 4px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .sector-card:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateX(10px);
+        }
+        
+        .sector-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            transition: color 0.3s ease;
+        }
+        
+        .sector-card:hover h3 {
+            color: var(--gold);
+        }
+        
+        .sector-card p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .sector-card:hover p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Services Section */
+        #services {
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+        
         .service-card {
-            padding: 2rem;
-            background: #F8FAFC;
-            border-radius: 12px;
-            border: 2px solid #E2E8F0;
-            transition: all 0.3s;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 2px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--navy) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
         
         .service-card:hover {
-            border-color: #B87333;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
         }
         
         .service-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #0A1628;
-        }
-        
-        .service-card p {
-            color: #475569;
-        }
-        
-        /* About */
-        .about {
-            padding: 4rem 0;
-        }
-        
-        .about h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #0A1628;
-        }
-        
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.125rem;
-            color: #475569;
-            line-height: 1.8;
-        }
-        
-        .about-content p {
+            color: var(--navy);
             margin-bottom: 1.5rem;
         }
         
-        /* Contact */
-        .contact {
-            padding: 4rem 0;
-            background: #0A1628;
-            color: #F8FAFC;
+        .service-card p {
+            color: var(--medium-gray);
+            line-height: 1.8;
         }
         
-        .contact h2 {
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1420 100%);
+            color: var(--white);
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            position: relative;
         }
         
-        .contact-info {
-            text-align: center;
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(201, 162, 39, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        #contact::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            border: 2px solid rgba(201, 162, 39, 0.1);
+            border-radius: 50%;
+            animation: float 25s infinite ease-in-out reverse;
+        }
+        
+        .contact-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        #contact h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        #contact p {
             font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .contact-info a {
-            color: #B87333;
+        .contact-email {
+            display: inline-block;
+            font-size: 1.5rem;
+            color: var(--gold);
             text-decoration: none;
-            font-weight: 600;
+            margin-bottom: 3rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
         }
         
-        .contact-info a:hover {
-            text-decoration: underline;
+        .contact-email:hover {
+            color: var(--white);
+            transform: scale(1.05);
         }
         
         /* Footer */
         footer {
-            padding: 2rem 0;
+            background-color: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
             text-align: center;
-            background: #0A1628;
-            color: #F8FAFC;
-            opacity: 0.8;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(201, 162, 39, 0.2);
         }
         
-        /* Responsive */
+        footer p {
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
             
-            nav {
-                display: none;
+            .hero .tagline {
+                font-size: 1.2rem;
             }
             
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--navy);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .overview-grid,
+            .ai-features,
+            .sectors-grid,
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+            
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="brand">
-                    <span class="logo">ψ</span>
-                    <div class="brand-text">
-                        <div class="brand-name">DENSITY PARTNERS</div>
-                        <div class="tagline">Where substance meets execution</div>
-                    </div>
-                </div>
-                <nav>
-                    <a href="#services">Services</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                </nav>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">DENSITY<span>PARTNERS</span></a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#overview">Firm</a></li>
+                <li><a href="#ai-advisory">AI Advisory</a></li>
+                <li><a href="#sectors">Sectors</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1><span class="psi">ψ</span> M&A Advisory<br>Built Different</h1>
-            <p>AI-powered investment banking for the lower middle market. Institutional execution with entrepreneurial efficiency.</p>
-            <a href="#contact" class="cta-button">Start a Conversation</a>
+        <div class="geometric-pattern"></div>
+        <div class="hero-content">
+            <h1>DENSITY PARTNERS</h1>
+            <p class="tagline">Lower Middle-Market M&A Advisory</p>
+            <p class="subtitle">Delivering institutional-grade execution with AI-powered insights to drive exceptional outcomes for business owners and strategic buyers.</p>
+            <a href="#contact" class="cta-button">INITIATE ENGAGEMENT</a>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <!-- Firm Overview -->
+    <section id="overview">
         <div class="container">
-            <h2>What We Do</h2>
+            <div class="section-header">
+                <h2>Institutional Excellence</h2>
+                <p>Our established team brings decades of collective experience in middle-market M&A, enhanced by proprietary AI systems that amplify our capabilities without replacing human judgment.</p>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Established Team</h3>
+                    <p>A seasoned group of M&A professionals with deep expertise across transaction structuring, valuation, negotiation, and deal execution. Our collective experience spans hundreds of transactions across diverse industries.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>AI-Enhanced Approach</h3>
+                    <p>We leverage proprietary AI systems to accelerate research, enhance valuation accuracy, and identify optimal buyer matches—enabling our team to focus on strategy, relationships, and value creation.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Client-First Philosophy</h3>
+                    <p>Every engagement is tailored to the unique circumstances and objectives of our clients. We prioritize discretion, transparency, and alignment of interests throughout the transaction lifecycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Powered Advisory -->
+    <section id="ai-advisory">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI-Powered Advisory</h2>
+                <p>Our proprietary AI systems augment every phase of the transaction process, delivering deeper insights and faster execution while preserving the critical human judgment that drives successful M&A outcomes.</p>
+            </div>
+            <div class="ai-features">
+                <div class="ai-feature">
+                    <div class="ai-icon">◈</div>
+                    <h3>Market Research</h3>
+                    <p>AI-driven market analysis identifies trends, comparable transactions, and strategic positioning opportunities in real-time.</p>
+                </div>
+                <div class="ai-feature">
+                    <div class="ai-icon">◊</div>
+                    <h3>Valuation Enhancement</h3>
+                    <p>Advanced modeling and scenario analysis provide comprehensive valuation frameworks that capture full enterprise value.</p>
+                </div>
+                <div class="ai-feature">
+                    <div class="ai-icon">◆</div>
+                    <h3>Buyer Identification</h3>
+                    <p>Intelligent matching algorithms identify and prioritize strategic and financial buyers most likely to maximize transaction value.</p>
+                </div>
+                <div class="ai-feature">
+                    <div class="ai-icon">◇</div>
+                    <h3>Deal Execution</h3>
+                    <p>Process automation and predictive analytics streamline due diligence, documentation, and closing while reducing execution risk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors Served -->
+    <section id="sectors">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sectors Served</h2>
+                <p>We serve lower middle-market companies across a focused range of industries where our team has demonstrated transaction expertise and sector knowledge.</p>
+            </div>
+            <div class="sectors-grid">
+                <div class="sector-card">
+                    <h3>Manufacturing</h3>
+                    <p>Precision manufacturing, industrial equipment, and specialized production operations with defensible market positions.</p>
+                </div>
+                <div class="sector-card">
+                    <h3>Healthcare</h3>
+                    <p>Healthcare services, medical devices, specialized practices, and healthcare IT serving the evolving needs of the sector.</p>
+                </div>
+                <div class="sector-card">
+                    <h3>Industrial Services</h3>
+                    <p>Essential B2B services including maintenance, repair, operations, and specialized industrial solutions.</p>
+                </div>
+                <div class="sector-card">
+                    <h3>Media & Entertainment</h3>
+                    <p>Content production, digital media, entertainment technology, and creative services with recurring revenue models.</p>
+                </div>
+                <div class="sector-card">
+                    <h3>Aerospace & Defense</h3>
+                    <p>Specialized components, support services, and technology solutions serving aerospace and defense supply chains.</p>
+                </div>
+                <div class="sector-card">
+                    <h3>Value-Added Distribution</h3>
+                    <p>Specialized distributors providing technical expertise, inventory management, and value-added services to niche markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Advisory Services</h2>
+                <p>We provide comprehensive M&A advisory services designed to maximize value and mitigate risk across the transaction lifecycle.</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
                     <h3>Sell-Side Advisory</h3>
-                    <p>Comprehensive sell-side representation for business owners seeking optimal outcomes. From valuation to close, we maximize value and minimize friction.</p>
+                    <p>Comprehensive representation for business owners seeking to maximize enterprise value. Our sell-side practice encompasses strategic positioning, valuation analysis, buyer identification and qualification, transaction structuring, negotiation, and closing coordination.</p>
                 </div>
                 <div class="service-card">
                     <h3>Buy-Side Advisory</h3>
-                    <p>Strategic acquisition support for private equity firms and strategic buyers. Target identification, valuation, and deal execution.</p>
+                    <p>Strategic acquisition support for established companies and financial sponsors. We provide target identification, valuation and financial analysis, due diligence coordination, deal structuring, and negotiation support to optimize acquisition outcomes.</p>
                 </div>
                 <div class="service-card">
                     <h3>Corporate Carve-Outs</h3>
-                    <p>Expert divestiture advisory for corporate parents seeking to divest non-core assets. Complex structures, simplified process.</p>
+                    <p>Specialized expertise in divesting non-core business units and divisions. Our carve-out practice addresses the unique complexities of separating business units, establishing standalone financials, and positioning carved-out entities for successful sale.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Recapitalizations</h3>
+                    <p>Strategic capital structure optimization for growth, liquidity, or ownership transition. We design and execute recapitalization strategies that balance owner objectives with optimal capital structure and sustainable growth.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <!-- Contact -->
+    <section id="contact">
         <div class="container">
-            <h2>Our Approach</h2>
-            <div class="about-content">
-                <p>Density Partners brings a new model to M&A advisory — combining 20+ years of institutional experience with AI-powered analytical capabilities.</p>
-                
-                <p>We focus on the lower middle market ($5M–$150M enterprise value) where deep expertise and personalized attention create the most impact. Our sectors of focus: manufacturing, industrial services, healthcare services, value-added distribution, and media.</p>
-                
-                <p>Built on the principle that substance matters more than style, we deliver institutional-quality execution without the bureaucracy of traditional advisory firms.</p>
+            <div class="contact-content">
+                <h2>Initiate Engagement</h2>
+                <p>For confidential discussion of your M&A objectives, transaction opportunities, or to explore how our AI-enhanced advisory services can deliver exceptional outcomes.</p>
+                <a href="mailto:deals@densitypartners.com" class="contact-email">deals@densitypartners.com</a>
+                <br>
+                <a href="#overview" class="cta-button">LEARN MORE</a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Let's Talk</h2>
-            <div class="contact-info">
-                <p>Ready to explore your options?</p>
-                <p><a href="mailto:gary@densitypartners.com">gary@densitypartners.com</a></p>
-                <p style="margin-top: 2rem; opacity: 0.7;">Density Partners<br>Los Angeles, California</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Density Partners. All rights reserved.</p>
+            <p>&copy; 2026 Density Partners. All rights reserved. | Lower Middle-Market M&A Advisory</p>
         </div>
     </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
