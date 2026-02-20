@@ -581,6 +581,190 @@
             transform: scale(1.05);
         }
         
+        .contact-secondary {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-link {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--white);
+        }
+        
+        /* Investment Section */
+        #invest {
+            background-color: var(--light-gray);
+        }
+        
+        .invest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .invest-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 2px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .invest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .invest-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        
+        .invest-card p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .invest-cta {
+            text-align: center;
+        }
+        
+        .invest-button {
+            background: linear-gradient(135deg, var(--gold) 0%, #d4af37 100%);
+            font-size: 1.1rem;
+            padding: 1.25rem 3rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .invest-button:hover {
+            background: linear-gradient(135deg, var(--navy) 0%, #2a3a5c 100%);
+            transform: translateY(-2px);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 39, 68, 0.95);
+            backdrop-filter: blur(10px);
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 4px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            margin-top: 5vh;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+            font-size: 2rem;
+            color: var(--medium-gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+        
+        .modal-close:hover {
+            color: var(--navy);
+        }
+        
+        .modal-content h2 {
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-content > p {
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        .invest-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .invest-form label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .invest-form input,
+        .invest-form select,
+        .invest-form textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 2px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .invest-form input:focus,
+        .invest-form select:focus,
+        .invest-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+            accent-color: var(--gold);
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+        
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--navy);
@@ -692,6 +876,7 @@
                 <li><a href="#ai-advisory">AI Advisory</a></li>
                 <li><a href="#sectors">Sectors</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#invest">Invest</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -828,6 +1013,80 @@
         </div>
     </section>
 
+    <!-- Strategic Investment -->
+    <section id="invest">
+        <div class="container">
+            <div class="section-header">
+                <h2>Strategic Capital</h2>
+                <p>We selectively partner with aligned investors who share our vision for transforming lower middle-market M&A through AI-enhanced advisory services.</p>
+            </div>
+            <div class="invest-grid">
+                <div class="invest-card">
+                    <h3>Market Opportunity</h3>
+                    <p>The lower middle-market ($10M-$250M enterprise value) represents over 200,000 U.S. businesses—a fragmented landscape underserved by traditional investment banks and ripe for technology-driven disruption.</p>
+                </div>
+                <div class="invest-card">
+                    <h3>Differentiated Model</h3>
+                    <p>Our proprietary AI systems enable institutional-quality execution at scale, dramatically improving research velocity, buyer matching, and deal throughput while maintaining the human judgment essential to M&A success.</p>
+                </div>
+                <div class="invest-card">
+                    <h3>Experienced Leadership</h3>
+                    <p>Built by M&A veterans with decades of experience at leading investment banks and advisory firms, combined with deep expertise in artificial intelligence and enterprise technology.</p>
+                </div>
+                <div class="invest-card">
+                    <h3>Growth Trajectory</h3>
+                    <p>Significant pipeline development across target sectors with a scalable platform designed to capture market share in the evolving M&A advisory landscape.</p>
+                </div>
+            </div>
+            <div class="invest-cta">
+                <button id="investBtn" class="cta-button invest-button">INVESTMENT INQUIRIES</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Modal -->
+    <div id="investModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Strategic Investment Inquiry</h2>
+            <p>For qualified investors interested in partnering with Density Partners.</p>
+            <form id="investForm" class="invest-form">
+                <div class="form-group">
+                    <label for="investorName">Name</label>
+                    <input type="text" id="investorName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="investorEmail">Email</label>
+                    <input type="email" id="investorEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="investorFirm">Firm / Family Office</label>
+                    <input type="text" id="investorFirm" name="firm" required>
+                </div>
+                <div class="form-group">
+                    <label for="investmentRange">Investment Range</label>
+                    <select id="investmentRange" name="range" required>
+                        <option value="">Select Range</option>
+                        <option value="$100K - $250K">$100K - $250K</option>
+                        <option value="$250K - $500K">$250K - $500K</option>
+                        <option value="$500K - $1M">$500K - $1M</option>
+                        <option value="$1M - $5M">$1M - $5M</option>
+                        <option value="$5M+">$5M+</option>
+                    </select>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="accredited" name="accredited" required>
+                    <label for="accredited">I am an accredited investor</label>
+                </div>
+                <div class="form-group">
+                    <label for="investorMessage">Message (Optional)</label>
+                    <textarea id="investorMessage" name="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="cta-button submit-button">SUBMIT INQUIRY</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Contact -->
     <section id="contact">
         <div class="container">
@@ -835,7 +1094,7 @@
                 <h2>Initiate Engagement</h2>
                 <p>For confidential discussion of your M&A objectives, transaction opportunities, or to explore how our AI-enhanced advisory services can deliver exceptional outcomes.</p>
                 <a href="mailto:deals@densitypartners.com" class="contact-email">deals@densitypartners.com</a>
-                <br>
+                <p class="contact-secondary">Investment inquiries: <a href="mailto:invest@densitypartners.com" class="contact-link">invest@densitypartners.com</a></p>
                 <a href="#overview" class="cta-button">LEARN MORE</a>
             </div>
         </div>
@@ -905,6 +1164,66 @@
                     });
                 }
             });
+        });
+
+        // Investment Modal
+        const investBtn = document.getElementById('investBtn');
+        const investModal = document.getElementById('investModal');
+        const modalClose = document.querySelector('.modal-close');
+        const investForm = document.getElementById('investForm');
+
+        investBtn.addEventListener('click', () => {
+            investModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        modalClose.addEventListener('click', () => {
+            investModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        investModal.addEventListener('click', (e) => {
+            if (e.target === investModal) {
+                investModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && investModal.classList.contains('active')) {
+                investModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        investForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('investorName').value;
+            const email = document.getElementById('investorEmail').value;
+            const firm = document.getElementById('investorFirm').value;
+            const range = document.getElementById('investmentRange').value;
+            const accredited = document.getElementById('accredited').checked ? 'Yes' : 'No';
+            const message = document.getElementById('investorMessage').value;
+
+            const subject = encodeURIComponent(`Investment Inquiry - ${firm}`);
+            const body = encodeURIComponent(
+                `INVESTMENT INQUIRY\n` +
+                `==================\n\n` +
+                `Name: ${name}\n` +
+                `Email: ${email}\n` +
+                `Firm/Family Office: ${firm}\n` +
+                `Investment Range: ${range}\n` +
+                `Accredited Investor: ${accredited}\n\n` +
+                `Message:\n${message || 'N/A'}\n\n` +
+                `---\n` +
+                `Submitted via densitypartners.com`
+            );
+
+            window.location.href = `mailto:invest@densitypartners.com?subject=${subject}&body=${body}`;
+            
+            investModal.classList.remove('active');
+            document.body.style.overflow = '';
+            investForm.reset();
         });
     </script>
 </body>
